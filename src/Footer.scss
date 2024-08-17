@@ -1,0 +1,45 @@
+.wrap-pack {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: center;
+
+
+    .pack {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: auto;
+        height: auto;
+        background: white;
+    }
+    
+    .first {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .link {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        color: rgba(112, 112, 114, 1);
+    }
+
+    .link:hover {
+        color: #82b4e7;
+    }
+    
+    .first-down {
+        display: grid;
+        gap: 15px;
+    }
+    
+    .top-link {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+        font-size: 15px;
+    }
+}

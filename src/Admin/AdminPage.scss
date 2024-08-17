@@ -1,0 +1,30 @@
+.admin-container{
+    display: flex;
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: blue;
+        width: 20%;
+    }
+    .admin-link{
+        color: rgba(0, 0, 0, 0.725);
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: 500;
+    }
+    .admin-link:hover{
+        color: #82b4e7;
+    }
+    
+    .right{
+       background-color: #82b4e7;
+        width: 80%;
+    }
+    label{
+        font-size: 16px;
+        font-weight: 500;
+        // color: #82b4e7;
+    }
+}
