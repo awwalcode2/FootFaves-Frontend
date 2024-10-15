@@ -12,6 +12,9 @@ const Admin = () => {
   const [productprice, setproductprice] = useState("")
   const [productimage, setproductimage] = useState("")
   const [prodCategory, setprodCategory] = useState([])
+  const [refresh,setrefresh] = useState(false)
+  const api = "https://footfavesbackend.onrender.com"
+ 
 
   const changeimage = (e) => {
     let file = e.target.files[0]
@@ -23,13 +26,16 @@ const Admin = () => {
   }
 
   const update = () => {
+    setrefresh(true)
     if (!productname || !productdescription || !productprice || !productimage || prodCategory.length < 1) {
       toast.error(" all input filds are required")
+      setrefresh(false)
     } else {
-      if (!productprice.startsWith("$" || "#")) {
-        toast.error("product price must start with $ ")
+      if (!productprice.startsWith("$")|| productprice.includes("-")) {
+        toast.error("invalid product price")
+        setrefresh(false)
       } else {
-        axios.post("http://localhost:7777/admin/uploadProduct", { productname, productdescription, productprice, prodCategory, productimage }
+        axios.post(`${api}/admin/uploadProduct`, { productname, productdescription, productprice, prodCategory, productimage }
           // , {
           //   headers: {
           //     "Authorization": `Bearer ${token}`,
@@ -41,9 +47,17 @@ const Admin = () => {
         )
           .then((res) => {
             console.log(res);
-            toast.success("saved to database successfully")
+            setrefresh(false)
+            toast.success( !res ? "processing" : "saved to database successfully")
+            setproductname("")
+            setproductdescription("")
+            setproductprice("")
+            setproductimage("")
+            setprodCategory([])
+
           }).catch((err) => {
             toast.error(err.response.data.message)
+            setrefresh(false)
             console.log(err);
           })
       }
@@ -75,12 +89,6 @@ const Admin = () => {
   return (
     <>
       <div className="admin-container">
-        <div className='left'>
-          <img src={require("../SHOES/FootFaves Logo.png")} alt="" width={'80px'} />
-          <Link className='admin-link'>Add product</Link>
-          <Link className='admin-link'>Edit product</Link>
-          <Link className='admin-link'>others</Link>
-        </div>
 
         <div className='right'>
           <div className='big-form col-6 mx-auto'>
@@ -113,14 +121,14 @@ const Admin = () => {
               <select onChange={(e) => pickCategory(e.target.value)} id='category' name='category'>
                 <option value="men">Men</option>
                 <option value="men">Men</option>
-                <option value="slide">Slides</option>
+                <option value="slides">Slides</option>
                 <option value="shoe">shoe</option>
                 <option value="palm">palm</option>
 
                 <option value="women">women</option>
-                <option value="slide">slides</option>
+                <option value="slides">slides</option>
                 <option value="shoe">shoes</option>
-                <option value="palm">palm</option>
+                <option value="sandals">sandals</option>
               </select>
 
               <div className="d-flex">
@@ -135,8 +143,8 @@ const Admin = () => {
             </div>
 
 
-            <div>
-              <button onClick={update} className='btn btn-primary'>Update</button>
+            <div className='okkk mt-4'>
+              {refresh? <button  className='btn btn-primary'>  <div class="load"></div>  </button> : <button onClick={update} className='letstry btn btn-primary'>Add Product</button>}
             </div>
 
             <ToastContainer />

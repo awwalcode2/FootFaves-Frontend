@@ -9,6 +9,7 @@ const Notfoundpage = () => {
     }
     return (
         <>
+
             <div className='div'>
                 <div></div>
                 <svg id="svgWrap_2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 700 250">
@@ -43,7 +44,8 @@ const Notfoundpage = () => {
             </div>
             </div>
         </>
-    ) 
+
+    )   
 }
 
 export default Notfoundpage

@@ -1,0 +1,74 @@
+.product {
+    width: 95%;
+    // margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;                                                                                                    
+}
+.checkoutbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.eachCart {
+    display: flex;
+    gap: 100px;
+}
+
+.tocheckOut {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+.noprod {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.paypal{
+    margin: auto;
+}
+.tryout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.paypalbtn{
+    width: 355px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: white;
+    border: 1.5px solid rgba(0, 0, 0, 0.123);
+    outline: none;
+}
+.paypalbtn:hover{
+    background-color: white;
+    border: 1.5px solid rgba(0, 0, 0, 0.123);
+}
+.paypal{
+    display: flex;
+    justify-content: space-around;
+}
+
+.returns{
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.435), -2px -2px 4px rgba(0, 0, 0, 0.372);
+    padding:5px 15px;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.me-n1{
+    margin-left: -0.5rem!important;
+}
+

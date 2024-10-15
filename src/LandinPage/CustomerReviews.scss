@@ -1,0 +1,148 @@
+
+.carousel-container {
+  position: relative;
+  width: 90%;
+  height: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.happyclient {
+  font-size: 32px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.circle-container {
+  margin-top: 5px;
+  position: absolute;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0.99;
+}
+
+.review-item {
+  position: absolute;
+  width: 170px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #82b4e7;
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.review-item.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.customer-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.center-review {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+
+.center-review .large {
+  width: 150px;
+  height: 150px;
+}
+
+.center-review p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: black;
+}
+
+.review-item p,
+.center-review p {
+  color: black;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .circle-container {
+    position: static;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0;
+    gap: 20px;
+    height: auto;
+  }
+
+
+  .carousel-container {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .review-item {
+    transform: none !important;
+    position: relative;
+    // width: 170px; 
+    width: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    border-radius: 8px;
+    text-align: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .review-item.active {
+    transform: none;
+    opacity: 1;
+  }
+
+  .center-review {
+    display: none;
+  }
+
+  .happyclient {
+    font-size: 28px;
+    text-align: center;
+  }
+}

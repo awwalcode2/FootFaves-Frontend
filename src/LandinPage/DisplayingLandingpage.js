@@ -3,6 +3,8 @@ import TopCarousel from './TopCarousel'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import ClassicsShoe from './ClassicsShoe'
+import CustomerReviews from './CustmerReviews'
+import Categories from './Categories'
 
 const DisplayingLandingpage = () => {
 
@@ -11,6 +13,8 @@ const DisplayingLandingpage = () => {
       <Navbar />
       <TopCarousel />
       <ClassicsShoe/>
+      <Categories/>
+      <CustomerReviews/>
       <Footer/>
     </div>
   )

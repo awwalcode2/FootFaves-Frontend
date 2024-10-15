@@ -11,33 +11,200 @@ nav {
         align-items: center;
         justify-content: space-between;
     }
-    
-    .links {
+
+    .genderlinks {
         display: flex;
         gap: 20px;
     }
-    
+
     .link {
         text-decoration: none;
-        /* color: rgba(96, 86, 86, 0.9); */
         color: black;
         font-size: 15px;
         font-weight: 700;
     }
-    
+
     .link:hover {
         color: #82b4e7;
     }
-    
+
+    .drop {
+        display: none;
+    }
+
     .icons {
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
     }
-    button{
+
+    button {
         border: none;
         background: transparent;
     }
-    button:hover{
+
+    button:hover {
         color: #82b4e7;
     }
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        height: 100vh;
+        width: 82%;
+        top: 0;
+        left: -100%;
+        z-index: 1;
+    }
+
+}
+
+.design {
+    position: absolute;
+    text-align: start;
+    width: 100%;
+    top: 80px;
+    left: 3px;
+}
+
+.icon {
+    position: absolute;
+    left: 83%;
+}
+
+.links {
+    margin-left: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 3rem;
+    display: flex;
+}
+
+.flexx {
+    display: flex;
+    justify-content: space-between;
+}
+
+.formm {
+    position: absolute;
+    top: 315px;
+    left: 30px;
+}
+
+.formm p {
+    justify-self: end;
+    font-size: 1.2rem;
+    justify-content: end;
+    max-width: 18rem;
+}
+
+.btn:focus .dropdown {
+    top: 0;
+    position: absolute;
+    left: -100%;
+}
+
+.vg {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+}
+
+.blue-btn {
+    border-radius: 20px;
+    padding: 9px 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #82b4e7;
+
+}
+
+.hr {
+    position: absolute;
+    top: 55px;
+    padding: 20px 0;
+}
+
+.drop-profille {
+    background: rgba(255, 255, 255, 0.956);
+    border-top: 2px solid #82b4e7;
+    padding: 20px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 15px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.drop-profille button {
+    text-align: center;
+    font-size: 27x;
+    font-weight: 600;
+}
+
+.focusprofile:focus-within .drop-profille {
+    display: block;
+}
+
+.grey-btn {
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 9px 25px;
+    color: black;
+    font-weight: 600;
+    background-color: #e9e9e9;
+}
+
+.disp {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 700px) {
+    .links {
+        text-decoration: none;
+        font-size: 1.4rem !important;
+
+    }
+
+    nav {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width:625px) {
+    .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .genderlinks {
+        display: none !important;
+    }
+
+    .drop {
+        display: block !important;
+    }
+
+    .drop:focus-within .dropdown {
+        top: 0 !important;
+        left: 0 !important;
+        transition: all ease .1s !important;
+    }
+
+
+
+
 }
