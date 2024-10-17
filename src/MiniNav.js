@@ -25,7 +25,7 @@ const MiniNav = ({ category }) => {
                 <div className="adjust">
                     <div className='cont-back-btn'>
                         <h1 className='h1'>{category}</h1>
-                        <button onClick={goback}>< TiArrowBack  size={20} className='back'/>Back</button>
+                        <button onClick={goback}  className='back'>< TiArrowBack  size={20}/>Back</button>
                     </div>
                     <div className='links2'>
                         <Link className='link' to={`/${productName}/shoe`}>Shoes </Link>
@@ -37,7 +37,7 @@ const MiniNav = ({ category }) => {
                     <div className='icons2'>
                     {/* <button><CgProfile color='black' size={65} style={{display: "none"}}/></button>
                     <button><CgProfile color='black' size={65}  style={{display: "none"}}/></button> */}
-                        <button ><LuSearch className='search' size={30} /></button>
+                        <button ><LuSearch className='search' /></button>
                     </div>
                 </div>
             </nav>

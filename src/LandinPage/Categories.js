@@ -8,7 +8,7 @@ const Categories = () => {
   return (
     <div className="Categories">
       <h3 className='footfavescategory'>FOOTFAVES POPULAR CATEGORY</h3>
-      <div className='Allcategories'>
+      <div className='Allcategories'> 
         <div className='each-categories' onClick={() => navigate("/Men")}>Men</div>
         <div className='each-categories' onClick={() => navigate("/Men/shoe")}>Men's Shoes</div>
         <div className='each-categories' onClick={() => navigate("/Men/slides")}>Men's Slides</div>

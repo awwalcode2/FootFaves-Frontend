@@ -153,7 +153,7 @@ const UpdateProduct = () => {
         <>
             <div className="carry d-flex justify-content-around flex-wrap">
                 {products == "" ? <h1 style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "80vh", }}>looking forward to see yah post here dear admin!!</h1> : products.map((product, i) => (
-                    <div key={i}>
+                    <div key={i} >
                         <h3>{product.productname}</h3>
                         <img src={product.productimage} alt="" width={"380px"} height={"380px"} style={{ borderRadius: "15px", cursor: "pointer" }} />
                         <div className='d-flex justify-content-between gap-4'>

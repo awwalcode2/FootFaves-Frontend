@@ -7,6 +7,7 @@ import "./Addtocart.scss"
 import { MdDelete } from "react-icons/md";
 import Footer from '../Footer'
 import { FaArrowRightLong } from "react-icons/fa6";
+import { PaystackButton } from 'react-paystack'
 
 
 const AddtoCart = () => {
@@ -17,8 +18,33 @@ const AddtoCart = () => {
     console.log(totalpay + "correct");
     console.log(NoOfProducts);
     let delivery = 3
-    
+
     const dispatch = useDispatch()
+
+
+
+    const componentProps = {
+        email: "anya@gmail.com",
+        amount: 51250 * 100,
+        phone: "+2348164934974",
+        metadata: {
+            FullName: 'awwal',
+        },
+        publicKey: 'pk_test_9a558288d1670a641dafa6f4e899ddb24f2fe749',
+        name: 'awwal',
+        text: "CHECK OUT WITH PAYSTACK",
+        onSuccess: (ref) => {
+
+
+        },
+        onClose: () => {
+
+            alert("abeg! You need to complete this payment, don't go!!!!");
+        },
+    }
+
+
+
 
     return (
         <>
@@ -91,7 +117,9 @@ const AddtoCart = () => {
 
                     <div className='tocheckOut'>
                         <div className='checkoutbtn'>
-                            <button className='btn col-8 btn-dark d-flex justify-content-between'> <span>CHECKOUT</span> <span><FaArrowRightLong size={'22px'} /></span> </button>
+                            <PaystackButton  className='btn col-8 btn-dark d-flex justify-content-center'  {...componentProps} />
+                            
+                            {/* <button className='btn col-8 btn-dark d-flex justify-content-between'   {...componentProps} > <span>CHECKOUT</span> </button> */}
                         </div>
 
 

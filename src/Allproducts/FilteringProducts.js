@@ -131,7 +131,7 @@ const FilteringProducts = ({ productName, otherproduct }) => {
                             <div className='eachPrd' key={i}>
                                 <img src={prdct.productimage} width={"360px"} height={"360px"} style={{ borderRadius: "8px" }} alt={prdct.productdescription} />
                                 <div className='cartbag'>
-                                    {buttonLoader ? "Adding...." :
+                                    {buttonLoader ? <button className='col-6 btn btn-primary'>Adding....</button> :
                                     <button className='col-6 btn btn-primary' onClick={() => addToCart({id:prdct._id,description:prdct.productdescription,productPrice:prdct.productprice,productImage:prdct.productimage,discountedPrice,quantity:Number(1),subtotalPrices:Number(prdct.productprice.split("$")[1])})}>
                                          <MdAddShoppingCart  size={"35px"} />
                                     </button>
