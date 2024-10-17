@@ -25,7 +25,7 @@ const AddtoCart = () => {
 
     const componentProps = {
         email: "anya@gmail.com",
-        amount: 51250 * 100,
+        amount: (Number(subtotalPrices) + Number(delivery))  * 100,
         phone: "+2348164934974",
         metadata: {
             FullName: 'awwal',

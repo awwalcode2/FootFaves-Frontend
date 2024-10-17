@@ -11,6 +11,7 @@ import { Link, Outlet } from 'react-router-dom';
 import axios from 'axios';
 const AdminNav = () => {
     const [reload, setreload] = useState(true)
+    const [slide, setslide] = useState(true)
     let security = localStorage.getItem("security")
     const navigate = useNavigate()
     const api = "https://footfavesbackend.onrender.com"
@@ -34,8 +35,12 @@ const AdminNav = () => {
             })
     }, [reload])
 
-    const gohome = ()=>{
+    const gohome = () => {
         navigate("/")
+    }
+
+    const cancelSlide = () => {
+        setslide(!slide)
     }
 
     return (
@@ -43,7 +48,7 @@ const AdminNav = () => {
             <div className="big-nav">
                 <div className="navbar">
                     <div className='left'>
-                        <div onClick={gohome} style={{cursor:"pointer"}}>
+                        <div onClick={gohome} style={{ cursor: "pointer" }}>
                             <img src={require("../SHOES/FootFaves Logo.png")} alt="" width={'80px'} />
                         </div>
 
@@ -56,29 +61,29 @@ const AdminNav = () => {
                         </div>
 
                         <div className="drop">
-                            <button className='menu'>
+                            <button className='menu' onClick={cancelSlide}>
                                 <IoMdMenu size={'30px'} cursor={'pointer'} />
                             </button>
+                            {
+                                slide &&
 
-                            <div className='dropdown'>
+                                <div className='dropdown'>
                                 <div className='vg'>
-                                    <button className='btn'> <MdOutlineClear size={35} /></button>
+                                    <button className='btn' onClick={cancelSlide}> <MdOutlineClear size={35} /></button>
                                 </div>
                                 <hr width="80%" className='hr' size="20" />
 
-                                <div className='design'>
+                                <div className='design' onClick={cancelSlide}>
                                     <div className='flexx'>
                                         <Link className='links' to="/Admin">Add product</Link> <AiFillHome className='icon' size={23} />
                                     </div>
-                                    <div className='flexx'>
+                                    <div className='flexx' onClick={cancelSlide}>
                                         <Link className='links' to="/Admin/Update">UpdateProduct</Link> <FaAngleRight className='icon' size={23} />
                                     </div>
                                     <div className='flexx'>
                                         <Link className='links'>Help</Link> <FaAngleRight className='icon' size={23} />
                                     </div>
-                                    {/* <div className='flexx'>
-                                    <Link className='links'> Contact Us </Link> <MdContactPhone className='icon' size={23} />
-                                </div> */}
+                               
                                 </div>
                                 <div className='formm2'>
                                     <p>You're in the Management Hub, where all key operations and decisions come to life. This space is designed for you to oversee, strategize, and guide our team toward continued success. Let’s keep making strides toward excellence!</p>
@@ -90,6 +95,9 @@ const AdminNav = () => {
                                 </div>
 
                             </div>
+                            }
+
+                         
                         </div>
                     </div>
                 </div>

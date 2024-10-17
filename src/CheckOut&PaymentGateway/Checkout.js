@@ -5,6 +5,7 @@ import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { PaystackButton } from 'react-paystack'
+
 // import getToken from '../Services/token';
 
 const Checkout = () => {

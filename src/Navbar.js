@@ -19,7 +19,9 @@ import { CiLogin } from "react-icons/ci";
 
 
 const Navbar = () => {
+    const [slide, setslide] = useState(false)
     let navigate = useNavigate()
+     
     const globalState = useSelector((state) => state.CounterReducer.cartArray)
     const NoOfProducts = globalState.reduce((accumulator, each) => accumulator + each.quantity, 0);
     console.log(globalState);
@@ -32,6 +34,9 @@ const Navbar = () => {
     }
     const callLogOut = () => {
         alert("welcome")
+    }
+    const cancelslide = ()=>{
+        setslide(!slide)
     }
     return (
         <>
@@ -66,27 +71,27 @@ const Navbar = () => {
                     </div>
 
                     <div className="drop">
-                        <button className='menu'>
+                        <button className='menu' onClick={cancelslide}>
                             <IoMdMenu size={'30px'} cursor={'pointer'} />
                         </button>
-
-                        <div className='dropdown'>
+                        {slide&&
+                            <div className='dropdown'>
                             <div className='vg'>
-                                <button className='btn'> <MdOutlineClear size={35} /></button>
+                                <button className='btn' onClick={cancelslide} > <MdOutlineClear size={35} /></button>
                             </div>
                             <hr width="80%" className='hr' size="20" />
 
                             <div className='design'>
-                                <div className='flexx'>
+                                <div className='flexx' onClick={cancelslide}>
                                     <Link className='links' to="/">Home </Link> <AiFillHome className='icon' size={23} />
                                 </div>
-                                <div className='flexx'>
+                                <div className='flexx' onClick={cancelslide}>
                                     <Link className='links' to="/Men"> Men </Link> <FaAngleRight className='icon' size={23} />
                                 </div>
-                                <div className='flexx'>
+                                <div className='flexx' onClick={cancelslide}>
                                     <Link className='links' to="/Women">Women </Link> <FaAngleRight className='icon' size={23} />
                                 </div>
-                                <div className='flexx'>
+                                <div className='flexx' onClick={cancelslide}>
                                     <Link className='links'> Contact Us </Link> <MdContactPhone className='icon' size={23} />
                                 </div>
                             </div>
@@ -100,6 +105,8 @@ const Navbar = () => {
                             </div>
 
                         </div>
+
+                        }
                     </div>
 
                 </div>
